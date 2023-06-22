@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet" href="./style.css"
+    />
+    <title>Login</title>
+    <script>
+        function login() {
+            var id = document.querySelector('#username');
+            var password = document.querySelector('#password');
+
+            if(( id.value ==='haminlee' || id.value==='HaminLee' ) && ( password.value==='12345' || password.value==='54321' )) {
+                alert('You are logged in.');
+             } else {
+                alert('Try again.');
+          }
+        }
+    </script>
+</head>
+<body>
+    
+<div class="loginbox">
+    <div>
+        <h3 class="centering">Login</h3>  
+    </div>
+    <div class="typearea">
+        <input id="username" class="typebox" type="text" placeholder="username">
+        <input id="password" class="typebox" type="text" placeholder="password">
+        <input class="loginbutton" type="button" value="Login" onclick="
+            login();
+        ">
+
+    </div>
+</div>
+
+</body>
+</html>
