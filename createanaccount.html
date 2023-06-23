@@ -25,6 +25,9 @@
 
     .topTextBox {
         margin: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .downFunctionBox {
@@ -34,7 +37,7 @@
         align-items: center;
     }
 
-    .id {
+    .typeboxstyle {
         margin: 15px 10px 0px 10px;
         width: 275px;
         height: 33px;
@@ -45,8 +48,8 @@
         padding-right: 10px;
     }
 
-    .continue {
-        margin: 15px 10px 10px 10px;
+    .createaccount {
+        margin: 25px 10px 10px 10px;
         width: 305px;
         height: 40px;
         border-radius: 30px;
@@ -72,13 +75,8 @@
     </style>
 
     <script>
-        function goToNext() {
-            var id = document.querySelector('#id').value ;
-            if (id === '111') {
-                window.location.href = "./password.html";
-            } else {
-                alert('Please try again.');
-            }
+        function goToMain() {
+            window.location.href = "./index.html";
         }
 
     </script>
@@ -86,13 +84,16 @@
 <body>
     <div class="loginBox">
         <div class="topTextBox">
-            <h1>Hello</h1>
-            <span>Sign in or <a href="./createanaccount.html">create an account</a></span>
+            <h1>Create an account</h1>
+            <span>Already a memeber? <a href="./index.html">Sign in</a></span>
         </div>
         <div class="downFunctionBox">
-            <input class="id" id="id" type="text" placeholder="   Email or username" onclick="">
-            <input class="continue button-style" id="continue" type="button" value="Continue" onclick="
-                goToNext();
+            <input class="typeboxstyle" id="firstname" type="text" placeholder="   First name" onclick="">
+            <input class="typeboxstyle" id="lastname" type="text" placeholder="   Last name" onclick="">
+            <input class="typeboxstyle" id="email" type="text" placeholder="   Email" onclick="">
+            <input class="typeboxstyle" id="password" type="text" placeholder="   Password" onclick="">
+            <input class="createaccount button-style" id="createaccount" type="button" value="Create account" onclick="
+                goToMain();
             ">
         </div>
     </div>

@@ -25,6 +25,10 @@
 
     .topTextBox {
         margin: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
     }
 
     .downFunctionBox {
@@ -57,17 +61,11 @@
         font-weight: 550;
     }
 
-    .button-style:hover {
-        transform: scale(1.02);
-        background-color: #282526;
-        color: white;
-        }
     
     h1 {
         margin-bottom: 5px;
         text-align: center;
     }
-
 
     </style>
 
@@ -79,21 +77,22 @@
             } else {
                 alert('Please try again.');
             }
+
         }
+
+
+
 
     </script>
 </head>
 <body>
     <div class="loginBox">
         <div class="topTextBox">
-            <h1>Hello</h1>
-            <span>Sign in or <a href="./createanaccount.html">create an account</a></span>
+            <h1>Welcome!</h1>
+            <span><a href="./index.html">Log out</a></span>
         </div>
         <div class="downFunctionBox">
-            <input class="id" id="id" type="text" placeholder="   Email or username" onclick="">
-            <input class="continue button-style" id="continue" type="button" value="Continue" onclick="
-                goToNext();
-            ">
+            <img src="./asset/welcomeimg.gif"/>
         </div>
     </div>
 
