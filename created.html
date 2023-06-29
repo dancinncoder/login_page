@@ -19,6 +19,9 @@
 
     .topTextBox {
         margin: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .downFunctionBox {
@@ -28,18 +31,8 @@
         align-items: center;
     }
 
-    .id {
-        margin: 15px 10px 0px 10px;
-        width: 275px;
-        height: 33px;
-        border-radius: 8px;
-        border: 1px solid rgb(225, 225, 225);
-        background-color: #F0F0F0;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 
-    .continue {
+    .signinnow {
         margin: 15px 10px 10px 10px;
         width: 305px;
         height: 40px;
@@ -66,13 +59,8 @@
     </style>
 
     <script>
-        function goToNext() {
-            var id = document.querySelector('#id').value ;
-            if (id === '111') {
-                window.location.href = "./password.html";
-            } else {
-                alert('Please try again.');
-            }
+        function goToMain() {
+            window.location.href = "./index.html";
         }
 
     </script>
@@ -80,13 +68,11 @@
 <body>
     <div class="loginBox">
         <div class="topTextBox">
-            <h1>Hello</h1>
-            <span>Sign in or <a href="./createanaccount.html">create an account</a></span>
+            <h1>Successfully created!</h1>
         </div>
         <div class="downFunctionBox">
-            <input class="id" id="id" type="text" autocomplete="off" placeholder="   Email or username" onclick="">
-            <input class="continue button-style" id="continue" type="button" value="Continue" onclick="
-                goToNext();
+            <input class="signinnow button-style" id="signinnow" type="button" value="Sign in now" onclick="
+                goToMain();
             ">
         </div>
     </div>

@@ -67,25 +67,50 @@
     </style>
 
     <script>
+
+        function validateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (email.value.match(mailformat)) {
+                window.location.href = "./index.html";
+            } else {
+                alert("You have entered an invalid email address!");
+                document.email.focus();
+                return false;
+            }
+        }
+
+        function validatePassword(inputText) {
+            var passwordformat = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+            if (password.value.match(passwordformat)) {
+                window.location.href = "./index.html";
+            } else {
+                alert("Passwords must be 8 to 25 characters long and contain a combination of alphanumeric characters and special characters.");
+                document.password.focus();
+                return false;
+            }
+        } 
+
         function goToMain() {
             window.location.href = "./index.html";
         }
 
     </script>
 </head>
-<body>
+<body onload="document.text1.focus()">
     <div class="loginBox">
         <div class="topTextBox">
             <h1>Create an account</h1>
             <span>Already a memeber? <a href="./index.html">Sign in</a></span>
         </div>
         <div class="downFunctionBox">
-            <input class="typeboxstyle" id="firstname" type="text" placeholder="   First name" onclick="">
-            <input class="typeboxstyle" id="lastname" type="text" placeholder="   Last name" onclick="">
-            <input class="typeboxstyle" id="email" type="text" placeholder="   Email" onclick="">
-            <input class="typeboxstyle" id="password" type="text" placeholder="   Password" onclick="">
+            <input class="typeboxstyle" id="firstname" type="text" autocomplete="off" placeholder="   First name" onclick="">
+            <input class="typeboxstyle" id="lastname" type="text" autocomplete="off" placeholder="   Last name" onclick="">
+            <input class="typeboxstyle" id="email" name="email1" type="text" autocomplete="off" placeholder="   Email" >
+            <input class="typeboxstyle" id="password" type="text" autocomplete="off" placeholder="   Password" onclick="">
             <input class="createaccount button-style" id="createaccount" type="button" value="Create account" onclick="
-                goToMain();
+                validateEmail(document.email);
+                validatePassword(document.password);
+                goToMain(); //이메일이 맞고, 비밀번호가 틀렸을 때 바로 index.html로 안넘어가게 해결해야함.
             ">
         </div>
     </div>
